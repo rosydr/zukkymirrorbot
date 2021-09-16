@@ -50,8 +50,8 @@ def start(update, context):
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-This bot can mirror all your links to Google Drive!
-Type /{BotCommands.HelpCommand} to get a list of available commands
+Hello, Saya Zukky si Mirror Bot. Tugas saya adalah mengubah Torrent / Direct Link menjadi GDrive Url!!
+Ketik /{BotCommands.HelpCommand} untuk membuka list perintah
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
