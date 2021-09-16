@@ -329,7 +329,7 @@ def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False):
             return
 
     elif not bot_utils.is_url(link) and not bot_utils.is_magnet(link):
-        sendMessage('No download source provided', bot, update)
+        sendMessage('Tidak ada tautan yang diberikan', bot, update)
         return
     elif not os.path.exists(link) and not bot_utils.is_mega_link(link) and not bot_utils.is_gdrive_link(link) and not bot_utils.is_magnet(link):
         try:
