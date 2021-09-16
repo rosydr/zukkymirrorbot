@@ -131,7 +131,7 @@ def get_readable_message():
         for download in list(download_dict.values()):
             INDEX += 1
             if INDEX > COUNT:
-                msg += f"<b>Filename:</b> <code>{download.name()}</code>"
+                msg += f"<b>Nama File:</b> <code>{download.name()}</code>"
                 msg += f"\n<b>Status:</b> <i>{download.status()}</i>"
                 if download.status() not in [
                     MirrorStatus.STATUS_ARCHIVING,
