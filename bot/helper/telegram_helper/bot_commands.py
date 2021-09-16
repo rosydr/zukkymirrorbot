@@ -16,7 +16,7 @@ class _BotCommands:
         self.RmSudoCommand = 'rmsudo'
         self.PingCommand = 'ping2'
         self.RestartCommand = 'restart2'
-        self.StatsCommand = 'stats'
+        self.StatsCommand = 'stats2'
         self.HelpCommand = 'help2'
         self.LogCommand = 'log'
         self.SpeedCommand = 'speedtest'
