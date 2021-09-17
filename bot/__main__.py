@@ -141,7 +141,7 @@ def bot_help(update, context):
 
 /{BotCommands.AddSudoCommand}: Menambah sudo user (Hanya Owner)
 
-/{BotCommands.RmSudoCommand}: Menghapus sudo users Hanya Owner)
+/{BotCommands.RmSudoCommand}: Menghapus sudo users (Hanya Owner)
 
 /{BotCommands.RestartCommand}: Melakukan restart bot
 
@@ -155,39 +155,39 @@ def bot_help(update, context):
 
 /{BotCommands.TsHelpCommand}: Mendapatkan bantuan untuk modul pencarian Torrent
 '''
-    help = Telegraph(access_token=telegraph_token).create_page(title = 'Slam Mirrorbot Help', author_name='Slam Mirrorbot',
-                                                               author_url='https://github.com/SlamDevs/slam-mirrorbot', html_content=help_string_telegraph)["path"]
+    help = Telegraph(access_token=telegraph_token).create_page(title = 'Bantuan Zukky Mirrorbot', author_name='Rosydr',
+                                                               author_url='https://t.me/RosySandro', html_content=help_string_telegraph)["path"]
     button = button_build.ButtonMaker()
-    button.buildbutton("Other Commands", f"https://telegra.ph/{help}")
+    button.buildbutton("Lihat Perintah Lainnya >>", f"https://telegra.ph/{help}")
     reply_markup = InlineKeyboardMarkup(button.build_menu(1))
     sendMarkup(help_string, context.bot, update, reply_markup)
 
 '''
 botcmds = [
-        (f'{BotCommands.HelpCommand}','Get Detailed Help'),
-        (f'{BotCommands.MirrorCommand}', 'Start Mirroring'),
-        (f'{BotCommands.TarMirrorCommand}','Start mirroring and upload as .tar'),
-        (f'{BotCommands.ZipMirrorCommand}','Start mirroring and upload as .zip'),
-        (f'{BotCommands.UnzipMirrorCommand}','Extract files'),
-        (f'{BotCommands.QbMirrorCommand}','Start Mirroring using qBittorrent'),
-        (f'{BotCommands.QbTarMirrorCommand}','Start mirroring and upload as .tar using qb'),
-        (f'{BotCommands.QbZipMirrorCommand}','Start mirroring and upload as .zip using qb'),
-        (f'{BotCommands.QbUnzipMirrorCommand}','Extract files using qBitorrent'),
-        (f'{BotCommands.CloneCommand}','Copy file/folder to Drive'),
-        (f'{BotCommands.CountCommand}','Count file/folder of Drive link'),
-        (f'{BotCommands.DeleteCommand}','Delete file from Drive'),
-        (f'{BotCommands.WatchCommand}','Mirror Youtube-dl support link'),
-        (f'{BotCommands.TarWatchCommand}','Mirror Youtube playlist link as .tar'),
-        (f'{BotCommands.ZipWatchCommand}','Mirror Youtube playlist link as .zip'),
-        (f'{BotCommands.CancelMirror}','Cancel a task'),
-        (f'{BotCommands.CancelAllCommand}','Cancel all tasks'),
-        (f'{BotCommands.ListCommand}','Searches files in Drive'),
-        (f'{BotCommands.StatusCommand}','Get Mirror Status message'),
-        (f'{BotCommands.StatsCommand}','Bot Usage Stats'),
-        (f'{BotCommands.PingCommand}','Ping the Bot'),
-        (f'{BotCommands.RestartCommand}','Restart the bot [owner/sudo only]'),
-        (f'{BotCommands.LogCommand}','Get the Bot Log [owner/sudo only]'),
-        (f'{BotCommands.TsHelpCommand}','Get help for Torrent search module')
+        (f'{BotCommands.HelpCommand}','Mendapatkan bantuan secara detail'),
+        (f'{BotCommands.MirrorCommand}', 'Memulai mirror'),
+        (f'{BotCommands.TarMirrorCommand}','Memulai mirroring dan upload sebagai .tar'),
+        (f'{BotCommands.ZipMirrorCommand}','Memulai mirroring dan upload sebagai .zip'),
+        (f'{BotCommands.UnzipMirrorCommand}','Extract file'),
+        (f'{BotCommands.QbMirrorCommand}','Memulai mirroring menggunakan qBittorrent'),
+        (f'{BotCommands.QbTarMirrorCommand}','Memulai mirroring dan upload sebagai .tar menggunakan qb'),
+        (f'{BotCommands.QbZipMirrorCommand}','Memulai mirroring dan upload sebagai .zip menggunakan qb'),
+        (f'{BotCommands.QbUnzipMirrorCommand}','Extract file menggunakan qBitorrent'),
+        (f'{BotCommands.CloneCommand}','Salin file/folder ke Drive'),
+        (f'{BotCommands.CountCommand}','Menghitung file/folder pada Drive Link'),
+        (f'{BotCommands.DeleteCommand}','Menghapus file dari Drive'),
+        (f'{BotCommands.WatchCommand}','Mirror Youtube menggunakan Youtube-dl'),
+        (f'{BotCommands.TarWatchCommand}','Mirror Youtube playlist link sebagai .tar'),
+        (f'{BotCommands.ZipWatchCommand}','Mirror Youtube playlist link sebagai .zip'),
+        (f'{BotCommands.CancelMirror}','Membatalkan proses mirror'),
+        (f'{BotCommands.CancelAllCommand}','Membatalkan semua proses mirror'),
+        (f'{BotCommands.ListCommand}','Mencari file di Drive'),
+        (f'{BotCommands.StatusCommand}','Mendapatkan status mirror bot'),
+        (f'{BotCommands.StatsCommand}','mendapatkan Stats pada bot'),
+        (f'{BotCommands.PingCommand}','Melakukan ping pada bot'),
+        (f'{BotCommands.RestartCommand}','Restart bot [hanya owner/sudo]'),
+        (f'{BotCommands.LogCommand}','Mendapatkan log file bot [hanyaowner/sudo]'),
+        (f'{BotCommands.TsHelpCommand}','Mendapatkan modul bantuan pencarian Torrent')
     ]
 '''
 
