@@ -45,8 +45,8 @@ def stats(update, context):
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/SlamDevs/slam-mirrorbot")
-    buttons.buildbutton("Channel", "https://t.me/SlamMirrorUpdates")
+    buttons.buildbutton("Source", "https://github.com/SlamDevs/slam-mirrorbot")
+    buttons.buildbutton("My Master", "https://t.me/RosySandro")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -57,7 +57,7 @@ Ketik /{BotCommands.HelpCommand} untuk membuka list perintah
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
         sendMarkup(
-            'Oops! not a Authorized user.\nPlease deploy your own <b>slam-mirrorbot</b>.',
+            'Oops! bukan Authorized user.\nKalian bisa buat sendiri <b>slam-mirrorbot</b>.',
             context.bot,
             update,
             reply_markup,
