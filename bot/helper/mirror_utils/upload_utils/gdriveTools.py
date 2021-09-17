@@ -130,7 +130,7 @@ class GoogleDriveHelper:
                                      resumable=False)
         file_metadata = {
             'name': file_name,
-            'description': 'Uploaded using Slam Mirrorbot',
+            'description': 'Uploaded using Zukky Mirrorbot',
             'mimeType': mime_type,
         }
         if parent_id is not None:
@@ -189,7 +189,7 @@ class GoogleDriveHelper:
         # File body description
         file_metadata = {
             'name': file_name,
-            'description': 'Uploaded by Slam Mirrorbot',
+            'description': 'Uploaded by Zukky Mirrorbot',
             'mimeType': mime_type,
         }
         try:
@@ -587,7 +587,7 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'Pencarian Zukky Bot',
+                                 title = 'Pencarian Zukky MirrorBot',
                                  author_name='Rosydr',
                                  author_url='https://t.me/RosySandro',
                                  html_content=content)
@@ -697,7 +697,7 @@ class GoogleDriveHelper:
             if not response["files"]:
                 continue
             if not Title:
-                msg += f'<h4>Search Result For: {fileName}</h4><br><br>'
+                msg += f'<h4>Hasil Pencarian Dari: {fileName}</h4><br><br>'
                 Title = True
             if len(DRIVES_NAMES) > 1 and DRIVES_NAMES[index] is not None:
                 msg += f"╾────────────╼<br><b>{DRIVES_NAMES[index]}</b><br>╾────────────╼<br>"
@@ -772,9 +772,9 @@ class GoogleDriveHelper:
 
         for content in self.telegraph_content :
             self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                    title = 'Slam Mirrorbot Search',
-                                                    author_name='Slam Mirrorbot',
-                                                    author_url='https://github.com/SlamDevs/slam-mirrorbot',
+                                                    title = 'Pencarian Zukky Mirrorbot',
+                                                    author_name='Rosydr',
+                                                    author_url='https://t.me/RosySandro',
                                                     html_content=content
                                                     )['path'])
 
