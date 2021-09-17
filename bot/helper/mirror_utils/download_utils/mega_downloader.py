@@ -122,7 +122,7 @@ class MegaAppListener(MegaListener):
 
     def cancel_download(self):
         self.is_cancelled = True
-        self.listener.onDownloadError("Download Canceled by user")
+        self.listener.onDownloadError("Download dibatalkan oleh user")
 
 
 class AsyncExecutor:
@@ -168,7 +168,7 @@ class MegaDownloadHelper:
         if mega_listener.error is not None:
             return sendMessage(str(mega_listener.error), listener.bot, listener.update)
         if STOP_DUPLICATE:
-            LOGGER.info('Checking File/Folder if already in Drive')
+            LOGGER.info('Checking File/Folder apakah sudah ada di Drive')
             mname = node.getName()
             if listener.isTar:
                 mname = mname + ".zip" if listener.isZip else mname + ".tar"
@@ -178,7 +178,7 @@ class MegaDownloadHelper:
                 gd = GoogleDriveHelper()
                 smsg, button = gd.drive_list(mname, True)
             if smsg:
-                msg1 = "File/Folder is already available in Drive.\nHere are the search results:"
+                msg1 = "File/Folder sudah ada di Drive.\nBerikut ini hasilnya:"
                 sendMarkup(msg1, listener.bot, listener.update, button)
                 executor.continue_event.set()
                 return
