@@ -20,7 +20,7 @@ class AriaDownloadHelper:
             dl = getDownloadByGid(gid)
             download = aria2.get_download(gid)
         if STOP_DUPLICATE and dl is not None:
-            LOGGER.info('Checking File/Folder if already in Drive...')
+            LOGGER.info('Mengecek apakah File/Folder sudah ada di Drive...')
             sname = aria2.get_download(gid).name
             if dl.getListener().isTar:
                 sname = sname + ".zip" if dl.getListener().isZip else sname + ".tar"
@@ -30,9 +30,9 @@ class AriaDownloadHelper:
                 gdrive = GoogleDriveHelper()
                 smsg, button = gdrive.drive_list(sname, True)
             if smsg:
-                dl.getListener().onDownloadError('File/Folder already available in Drive.\n\n')
+                dl.getListener().onDownloadError('File/Folder sudah ada di Drive.\n\n')
                 aria2.remove([download], force=True)
-                sendMarkup("Here are the search results:", dl.getListener().bot, dl.getListener().update, button)
+                sendMarkup("Berikut ini hasilnya:", dl.getListener().bot, dl.getListener().update, button)
                 return
         if (TORRENT_DIRECT_LIMIT is not None or TAR_UNZIP_LIMIT is not None) and dl is not None:
             sleep(1)
@@ -45,7 +45,7 @@ class AriaDownloadHelper:
                 mssg = f'Torrent/Direct limit is {TORRENT_DIRECT_LIMIT}'
             result = check_limit(size, TORRENT_DIRECT_LIMIT, TAR_UNZIP_LIMIT, is_tar_ext)
             if result:
-                dl.getListener().onDownloadError(f'{mssg}.\nYour File/Folder size is {get_readable_file_size(size)}')
+                dl.getListener().onDownloadError(f'{mssg}.\nUkuran File/Folder adalah {get_readable_file_size(size)}')
                 aria2.remove([download], force=True)
                 return
         update_all_messages()
@@ -72,7 +72,7 @@ class AriaDownloadHelper:
         sleep(4)
         dl = getDownloadByGid(gid)
         if dl: 
-            dl.getListener().onDownloadError('Dead torrent!')
+            dl.getListener().onDownloadError('Torrent telah mati!')
 
     @new_thread
     def __onDownloadError(self, api, gid):
