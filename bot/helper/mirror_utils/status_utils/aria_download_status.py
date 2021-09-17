@@ -86,7 +86,7 @@ class AriaDownloadStatus(Status):
         LOGGER.info(f"Membatalkan Download: {self.name()}")
         download = self.aria_download()
         if download.is_waiting:
-            self.__listener.onDownloadError("DOwnload dibatalkan oleh user!")
+            self.__listener.onDownloadError("Download dibatalkan oleh user!")
             aria2.remove([download], force=True)
             return
         if len(download.followed_by_ids) != 0:
