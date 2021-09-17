@@ -23,12 +23,12 @@ PAGE_NO = 1
 class MirrorStatus:
     STATUS_UPLOADING = "Uploading...📤"
     STATUS_DOWNLOADING = "Downloading...📥"
-    STATUS_CLONING = "Cloning...♻️"
-    STATUS_WAITING = "Queued...📝"
-    STATUS_FAILED = "Failed 🚫. Cleaning Download..."
-    STATUS_PAUSE = "Paused...⭕️"
-    STATUS_ARCHIVING = "Archiving...🔐"
-    STATUS_EXTRACTING = "Extracting...📂"
+    STATUS_CLONING = "Menyalin...♻️"
+    STATUS_WAITING = "Mengantri...📝"
+    STATUS_FAILED = "Gagal 🚫. Membersihkan Download..."
+    STATUS_PAUSE = "Jeda...⭕️"
+    STATUS_ARCHIVING = "Mengarsipkan...🔐"
+    STATUS_EXTRACTING = "Mengekstrak...📂"
 
 
 PROGRESS_MAX_SIZE = 100 // 8
