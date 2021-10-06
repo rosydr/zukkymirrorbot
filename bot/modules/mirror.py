@@ -169,10 +169,10 @@ class MirrorListener(listeners.MirrorListeners):
 
     def onUploadComplete(self, link: str, size, files, folders, typ):
         with download_dict_lock:
-            msg = f'<b>Nama File: </b><code>{download_dict[self.uid].name()}</code>\n<b>Ukuran: </b><code>{size}</code>'
+            msg = f'<b>Nama: </b><code>{download_dict[self.uid].name()}</code>\n<b>Ukuran: </b><code>{size}</code>'
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
                 msg += '\n<b>Tipe: </b><code>Folder</code>'
-                msg += f'\n<b>SubFolders: </b><code>{folders}</code>'
+                msg += f'\n<b>Jumlah Folder: </b><code>{folders}</code>'
                 msg += f'\n<b>Jumlah File: </b><code>{files}</code>'
             else:
                 msg += f'\n<b>Tipe: </b><code>{typ}</code>'
@@ -217,6 +217,7 @@ class MirrorListener(listeners.MirrorListeners):
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
                 msg += f'\n\nPencermin: {uname}'
+                msg += f'\n\n ID: {self.message.from_user.id}'
             try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
